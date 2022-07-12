@@ -36,9 +36,9 @@ jobs:
       - name: Building 
         run: |
           CGO_ENABLED=0 go build -o build/kepler-cli github.com/extvos/kepler
-          CGO_ENABLED=0 go build -o build/kepler-demo github.com/extvos/demo
+          CGO_ENABLED=0 go build -o build/kepler-demo github.com/extvos/kepler-demo
 
       - name: Testing
         run: |
           go test -v github.com/extvos/kepler
-          go test -v github.com/extvos/demo
+          go test -v github.com/extvos/kepler-demo
