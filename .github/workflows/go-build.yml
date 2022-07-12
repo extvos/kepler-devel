@@ -29,8 +29,8 @@ jobs:
 
       - name: Preparing Building
         run: |
-          go env
-          export
+          pwd
+          ls -l
           mkdir build/
 
       - name: Building 
