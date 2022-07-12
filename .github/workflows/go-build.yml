@@ -26,6 +26,8 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: '>=1.18.3'
+
+      - name: Show env
         run: go env
 
       - name: Building kepler
