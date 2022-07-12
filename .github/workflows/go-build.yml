@@ -27,17 +27,18 @@ jobs:
         with:
           go-version: '>=1.18.3'
 
-      - name: Show env
-        run: go env
+      - name: Preparing Building
+        run: |
+          go env
+          export
+          mkdir build/
 
-      - name: Building kepler
-        run: CGO_ENABLED=0 go build -o kepler-cli github.com/extvos/kepler
+      - name: Building 
+        run: |
+          CGO_ENABLED=0 go build -o build/kepler-cli github.com/extvos/kepler
+          CGO_ENABLED=0 go build -o build/kepler-demo github.com/extvos/demo
 
-      - name: Building demo
-        run: CGO_ENABLED=0 go build -o kepler-demo github.com/extvos/demo
-
-      - name: Testing kepler
-        run: go test -v github.com/extvos/kepler
-
-      - name: Testing demo
-        run: go test -v github.com/extvos/demo
+      - name: Testing
+        run: |
+          go test -v github.com/extvos/kepler
+          go test -v github.com/extvos/demo
