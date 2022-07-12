@@ -29,10 +29,10 @@ jobs:
         id: go
 
       - name: Building kepler
-        run: CGO_ENABLED=0 go build github.com/extvos/kepler
+        run: CGO_ENABLED=0 go build -o kepler-cli github.com/extvos/kepler
 
       - name: Building demo
-        run: CGO_ENABLED=0 go build github.com/extvos/demo
+        run: CGO_ENABLED=0 go build -o kepler-demo github.com/extvos/demo
 
       - name: Testing kepler
         run: go test -v github.com/extvos/kepler
