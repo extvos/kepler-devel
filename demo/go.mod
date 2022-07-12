@@ -1,4 +1,4 @@
-module github.com/extvos/demo
+module github.com/extvos/kepler-demo
 
 go 1.18
 
