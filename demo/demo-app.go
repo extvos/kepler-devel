@@ -6,6 +6,7 @@ package main
 import (
 	"fmt"
 	"github.com/mitchellh/go-homedir"
+	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"os"
@@ -32,8 +33,9 @@ func Execute() {
 }
 
 func init() {
-	cobra.OnInitialize()
-
+	cobra.OnInitialize(initConfig)
+	logrus.SetLevel(logrus.DebugLevel)
+	logrus.SetOutput(os.Stdout)
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "demo.yml", "config file (default is demo.yml)")
 
 	// Here you will define your flags and configuration settings.
@@ -62,9 +64,9 @@ func initConfig() {
 			os.Exit(1)
 		}
 
-		// Search config in home directory with name ".cygnux.cfg" (without extension).
+		// Search config in home directory with name ".demo.cfg" (without extension).
 		viper.AddConfigPath(home)
-		viper.SetConfigName(".deneb.cfg")
+		viper.SetConfigName(".demo.cfg")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match

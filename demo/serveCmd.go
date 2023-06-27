@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/extvos/kepler/service"
-
 	"github.com/spf13/cobra"
+	"log"
 )
 
 // newCmd represents the version command
@@ -14,7 +14,7 @@ var serveCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("To be done...")
 		listenAddr, _ := cmd.Flags().GetString("listen")
-		service.Listen(listenAddr)
+		log.Fatalln(service.Listen(listenAddr))
 	},
 }
 
