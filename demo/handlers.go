@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/extvos/kepler/contrib/restlet"
 	"github.com/extvos/kepler/service"
 	"github.com/extvos/kepler/servlet"
 	log "github.com/sirupsen/logrus"
@@ -23,4 +24,5 @@ func init() {
 	service.Use("/hello", middleware)
 	service.Get("/", hello)
 	service.Get("/hello", hello)
+	service.All("/student", restlet.NewHandler[Student]())
 }

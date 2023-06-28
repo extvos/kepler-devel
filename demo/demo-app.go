@@ -36,7 +36,7 @@ func init() {
 	cobra.OnInitialize(initConfig)
 	logrus.SetLevel(logrus.DebugLevel)
 	logrus.SetOutput(os.Stdout)
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "demo.yml", "config file (default is demo.yml)")
+	rootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "C", "demo.yml", "config file (default is demo.yml)")
 
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,

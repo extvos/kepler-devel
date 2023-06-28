@@ -1,3 +1,6 @@
 [submodule "kepler"]
 	path = kepler
 	url = https://github.com/extvos/kepler.git
+[submodule "go.xql"]
+	path = go.xql
+	url = https://github.com/archsh/go.xql.git

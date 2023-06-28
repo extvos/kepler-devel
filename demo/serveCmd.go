@@ -20,6 +20,6 @@ var serveCmd = &cobra.Command{
 
 func init() {
 	serveCmd.Flags().StringP("listen", "L", "127.0.0.1:8080", "Demo application listen address and port.")
-	serveCmd.Flags().StringP("config", "C", "", "Configuration filename.")
+	//serveCmd.Flags().StringP("config", "C", "", "Configuration filename.")
 	// rootCmd.AddCommand(newCmd)
 }
