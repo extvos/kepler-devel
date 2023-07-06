@@ -13,5 +13,10 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
-.idea
+.idea/
 build/
+pkg/
+
+# Golang
+go.work.sum
+go.sum
